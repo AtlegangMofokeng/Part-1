@@ -2,62 +2,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-    <link rel="javascript" href="index.js">
-       <link rel="stylesheet"  href="style.css" >
-       <script src="index.js"></script>
-=======
-       <link rel="stylesheet"  href="style.css" >
->>>>>>> 3a5b5df02459f1a2f3463ff38a6933ad2613d21f
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>410 Kagiso</title>
 </head>
-<body>
+<body> 
+
+
     <header>
         <nav>
-        <img src="images/Sesame Street Sign Template.jpg" alt="brand logo" class="center">
-        <a href="index.html">Home </a>
-        <a href="about.html">About</a>
-        <a href="contact.html">contact</a>
-        <a href="store.html"> Store </a>
-        <a href="celebrate.html">Celebrate us</a>
+            <img src="images/Sesame Street Sign Template.jpg" alt="brand logo" class="center">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="store.html">Store</a>
+            <a href="celebrate.html">Celebrate Us</a>
+
+            <!-- Cart icon -->
+            <div class="cart-icon">
+                🛒 <span class="cart-count">0</span>
+            </div>
         </nav>
     </header>
+
     <hr>
-    <h1>410 Kagiso</h1>
-    <marquee><h2><p class="rainbow-text"> Shop now ! New colours in store !</p></h2></marquee>
+
+    <marquee><h2><p class="rainbow-text">Shop now! New colours in store!</p></h2></marquee>
+
     <main class="store">
         <h2>Our Headwear Collection</h2>
+
+        <!-- PRODUCT GRID START -->
         <div class="product-grid">
-            <!--Product 1-->
-<<<<<<< HEAD
+
+            <!-- PRODUCT 1 -->
             <div class="product-card sunhat">
-=======
-            <div class="product-card Sunhat">
->>>>>>> 3a5b5df02459f1a2f3463ff38a6933ad2613d21f
-        <img src="images/Screenshot_20250827_132218_Instagram.jpg" alt="brown sun hat " width="350">
-    <h3>Brown Sun Hat</h3>
-    <p class="price">R200</p>
-    <button >Add to Cart</button>
-    </div>
-    <!--Product 2-->
-       <div> <img src="images/3 caps.jpg" alt="caps" width="350">
-    <h3>Stylish Caps</h3>
-    <p class="price">R250</p>
-<<<<<<< HEAD
-    <button class="add-cart">Add to Cart</button>
-=======
-    <button>Add to Cart</button>
->>>>>>> 3a5b5df02459f1a2f3463ff38a6933ad2613d21f
-    </div>
-        <img src="images/hats.jpg" width="350"> </div>
-        <img src="images/IMG-20250827-WA0036.jpg" width="350">
+
+                <div class="slideshow-container-p1">
+
+                    <div class="p1Slide fadeP1">
+                        <img src="images/Screenshot_20250827_132218_Instagram.jpg" width="350">
+                    </div>
+
+                    <div class="p1Slide fadeP1">
+                        <img src="images/hats.jpg" width="350">
+                    </div>
+
+                    <a class="prevP1" onclick="plusSlidesP1(-1)">❮</a>
+                    <a class="nextP1" onclick="plusSlidesP1(1)">❯</a>
+                </div>
+
+                <div class="dotsP1">
+                    <span class="dotP1" onclick="currentSlideP1(1)"></span>
+                    <span class="dotP1" onclick="currentSlideP1(2)"></span>
+                </div>
+
+                <h3>Sun Hat</h3>
+                <p class="price">R180</p>
+
+                <div class="color-options">
+                    <span class="color-circle black" onclick="showColor('black')"></span>
+                    <span class="color-circle lightpink" onclick="showColor('lightpink')"></span>
+                    <span class="color-circle yellow" onclick="showColor('yellow')"></span>
+                    <span class="color-circle lightgreen" onclick="showColor('lightgreen')"></span>
+                    <span class="color-circle darkblue" onclick="showColor('darkblue')"></span>
+                    <span class="color-circle lightgrey" onclick="showColor('lightgrey')"></span>
+                    <span class="color-circle darkpink" onclick="showColor('darkpink')"></span>
+                </div>
+<input type="number" class="qty-input" value="1" min="1">
+
+                <button class="add-cart"
+                    data-product="Sun Hat"
+                    data-price="180">
+                    Add to Cart
+                </button>
+
+            </div>
+            <!-- END PRODUCT 1 -->
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card caps">
+
+                <img src="images/3 caps.jpg" width="350" alt="caps">
+
+                <h3>Stylish Caps</h3>
+                <p class="price">R150</p>
+
+                <div class="color-options2">
+                    <span class="color-circle2 brown" onclick="showColor2('brown', this)"></span>
+                    <span class="color-circle2 skyblue" onclick="showColor2('skyblue', this)"></span>
+                    <span class="color-circle2 darkblue" onclick="showColor2('darkblue', this)"></span>
+                    <span class="color-circle2 red" onclick="showColor2('red', this)"></span>
+                    <span class="color-circle2 yellow" onclick="showColor2('yellow', this)"></span>
+                    <span class="color-circle2 orange" onclick="showColor2('orange', this)"></span>
+                    <span class="color-circle2 purple" onclick="showColor2('purple', this)"></span>
+                    <span class="color-circle2 lightpink" onclick="showColor2('lightpink', this)"></span>
+                </div>
+                
+                    <input type="number" class="qty-input" value="1" min="1">
+
+                <button class="add-cart"
+                    data-product="Stylish Caps"
+                    data-price="150">
+                    Add to Cart
+                </button>
+
+            </div>
+            <!-- END PRODUCT 2 -->
+
         </div>
+        <!-- PRODUCT GRID END -->
+
     </main>
+
     <hr>
+
     <footer>
-        <p>&copy; Copyright- Kagiso 2025</p>
+        <p>&copy; Copyright - Kagiso 2025</p>
     </footer>
+<script src="index.js"></script>
 </body>
 </html>
