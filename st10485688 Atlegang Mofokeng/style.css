@@ -1,0 +1,338 @@
+h1{
+    color:#33cc33;
+    font-family:sans-serif
+}
+p{
+    color: #ff3399 ; 
+    font-family: fantasy;
+}
+nav a {
+    text-decoration: none;
+    background-color:#0057ff;
+    color: #ff6600;
+    font-weight: bold;
+    text-align: right;
+    padding:0px 85px ;
+    margin-right: 15px;
+    border-radius: 5px;
+ }
+ nav a:hover{
+    color: #33cc33;
+ }
+
+ body{
+
+background-color:#fee303;
+ }
+
+.rainbow-text {
+    background: linear-gradient( to right,red,rgb(255, 123, 0),teal, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    font-size: 2rem; /*make it easier to see*/
+    font-weight: bold;
+}
+
+.centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/*ABOUT PAGE STYLING ONLY*/
+body.about-page{
+    margin: 0;
+    font-family:  Arial,sans-serif;
+    background: url(images/758dce717f38ce71d682a220c24173dd.jpg);
+    center/cover no-repeat fixed;
+    color: white;
+    line-height: 1.6;
+}
+
+/*Main content*/
+body.about-page main{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+body.about-page main h2{
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+body.about-page main p{ 
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+/*Optional:Improve readability with subtle text shadow*/
+body.about-page main h2,
+body.about-page main p{
+    text-shadow: 1px 1px 3px rgba(0,0,0, 0.7);
+}
+
+/*Optional: Responsive font sizes*/
+body.about-page main h2{
+    font-size:clamp(1.5rem, 4vw, 2rem) ;
+}
+body.about-page main p{
+    font-size:clamp(1rem, 2.5vw, 1.2rem) ;
+}
+h2{
+    color: #33cc33;
+    font-family: Monoton;
+}
+
+/* Reviews Section */
+.reviews {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 700px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    color: white;
+}
+
+.reviews h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff9800; /* highlight title */
+}
+
+.review {
+    margin-bottom: 25px;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: gold;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.reviewer {
+    font-weight: bold;
+    color: #ccc;
+}
+
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* adjust as needed */
+  margin: 0 auto;
+  height: 400px; /* adjust height */
+  overflow: hidden;
+  border-radius: 12px; /* optional */
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 21s infinite; /* 3s per image */
+}
+
+/* Stagger each image by 3 seconds */
+.slideshow img:nth-child(1) { animation-delay: 0s; 
+  opacity: 1; /* start visible */
+}
+.slideshow img:nth-child(2) { animation-delay: 3s; }
+.slideshow img:nth-child(3) { animation-delay: 6s; }
+.slideshow img:nth-child(4) { animation-delay: 9s; }
+.slideshow img:nth-child(5) { animation-delay: 12s; }
+.slideshow img:nth-child(6) { animation-delay: 15s; }
+.slideshow img:nth-child(7) { animation-delay: 18s; }
+
+/* Fade animation */
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Store page */
+.store {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.store h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ff9800;
+}
+
+/* Product Grid for 2 items */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Product Card */
+.product-card {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.product-card .price {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.product-card button {
+    padding: 10px 15px;
+    background: #ff9800;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.product-card button:hover {
+    background: #e68900;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+/* Individual Product Colors */
+
+/* Sun Hat */
+.product-card.sunhat {
+    background: rgba(139,69,19,0.7); /* brown overlay */
+}
+
+.product-card.sunhat .price {
+    color: #ff9800; /* orange price */
+}
+
+.product-card.sunhat button {
+    background: #ff9800;
+}
+
+.product-card.sunhat button:hover {
+    background: #e68900;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Caps */
+.product-card.caps {
+    background: rgba(0,100,0,0.7); /* dark green overlay */
+}
+
+.product-card.caps .price {
+    color: #39ff14; /* neon green price */
+}
+
+.product-card.caps button {
+    background: #39ff14;
+}
+
+.product-card.caps button:hover {
+    background: #32cc11;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+.home-collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto; /* height adjusts to image aspect ratio */
+    gap: 0; /* images touch */
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.collage-item {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    position: relative;
+}
+
+/* All images fully visible */
+.collage-item img {
+    width: 100%;
+    height: auto; /* ensures full image is shown */
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.4s, filter 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Hover effect */
+.collage-item:hover img {
+    transform: scale(1.05); /* slightly zoom */
+    filter: brightness(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Fun playful rotations */
+.collage-item:nth-child(1) img { transform: rotate(-2deg); }
+.collage-item:nth-child(2) img { transform: rotate(1deg); }
+.collage-item:nth-child(3) img { transform: rotate(-1deg); }
+.collage-item:nth-child(4) img { transform: rotate(2deg); }
+.collage-item:nth-child(5) img { transform: rotate(-3deg); }
+.collage-item:nth-child(6) img { transform: rotate(1deg); }
+.collage-item:nth-child(7) img { transform: rotate(0deg); }
+.collage-item:nth-child(8) img { transform: rotate(2deg); }
+
+/* Optional: make some images larger for dynamic layout */
+.collage-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.collage-item:nth-child(4) { grid-column: span 2; }
+.collage-item:nth-child(6) { grid-row: span 2; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .home-collage { grid-template-columns: repeat(2, 1fr); }
+    .collage-item img { transform: rotate(0deg); }
+}
+
+@media (max-width: 500px) {
+    .home-collage { grid-template-columns: 1fr; }
+}
