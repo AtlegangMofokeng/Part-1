@@ -21,8 +21,7 @@ nav a {
  }
 
  body{
-
-background-color:#fee303;
+    background-color:#fee303;
  }
 
 .rainbow-text {
@@ -236,12 +235,11 @@ h2{
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-
 /* Individual Product Colors */
 
 /* Sun Hat */
 .product-card.sunhat {
-    background: rgba(139,69,19,0.7); /* brown overlay */
+    background: #4c048fe1; /*purple overlay */
 }
 
 .product-card.sunhat .price {
@@ -260,7 +258,7 @@ h2{
 
 /* Caps */
 .product-card.caps {
-    background: rgba(0,100,0,0.7); /* dark green overlay */
+    background: #4c048fe1; /* purple overlay */
 }
 
 .product-card.caps .price {
@@ -277,12 +275,12 @@ h2{
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-
+/* Home Collage */
 .home-collage {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: auto; /* height adjusts to image aspect ratio */
-    gap: 0; /* images touch */
+    grid-auto-rows: auto;
+    gap: 0;
     max-width: 1200px;
     margin: 50px auto;
 }
@@ -294,25 +292,22 @@ h2{
     position: relative;
 }
 
-/* All images fully visible */
 .collage-item img {
     width: 100%;
-    height: auto; /* ensures full image is shown */
+    height: auto;
     object-fit: contain;
     border-radius: 10px;
     transition: transform 0.4s, filter 0.4s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Hover effect */
 .collage-item:hover img {
-    transform: scale(1.05); /* slightly zoom */
+    transform: scale(1.05);
     filter: brightness(1.2);
     z-index: 10;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-/* Fun playful rotations */
 .collage-item:nth-child(1) img { transform: rotate(-2deg); }
 .collage-item:nth-child(2) img { transform: rotate(1deg); }
 .collage-item:nth-child(3) img { transform: rotate(-1deg); }
@@ -322,12 +317,10 @@ h2{
 .collage-item:nth-child(7) img { transform: rotate(0deg); }
 .collage-item:nth-child(8) img { transform: rotate(2deg); }
 
-/* Optional: make some images larger for dynamic layout */
 .collage-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
 .collage-item:nth-child(4) { grid-column: span 2; }
 .collage-item:nth-child(6) { grid-row: span 2; }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
     .home-collage { grid-template-columns: repeat(2, 1fr); }
     .collage-item img { transform: rotate(0deg); }
@@ -336,3 +329,395 @@ h2{
 @media (max-width: 500px) {
     .home-collage { grid-template-columns: 1fr; }
 }
+
+/* Product 1 Slideshow */
+.p1Slide {
+    display: none;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.p1Slide.active {
+    display: block;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+}
+
+.prevP1, .nextP1 {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    font-size: 18px;
+    user-select: none;
+}
+
+.prevP1 { left: 5px; }
+.nextP1 { right: 5px; }
+
+.dotP1 {
+    height: 12px;
+    width: 12px;
+    margin: 0 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.activeP1 {
+    background-color: #ff9800;
+}
+
+/* Color Selectors */
+.color-circle,
+.color-circle2 {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: transform 0.2s;
+}
+
+.color-circle:hover,
+.color-circle2:hover {
+    transform: scale(1.2);
+}
+
+.selected {
+    outline: 3px solid #ff9800;
+    transform: scale(1.2);
+}
+
+/* Mini Cart Popup */
+.mini-cart {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    color: black;
+    padding: 15px;
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 1000;
+}
+
+.cart-icon:hover + .mini-cart {
+    display: block;
+}
+
+.color-circle,
+.color-circle2 {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: transform 0.2s, outline 0.2s;
+}
+
+.color-circle:hover,
+.color-circle2:hover {
+    transform: scale(1.2);
+}
+
+.selected {
+    outline: 3px solid #ff9800;
+    transform: scale(1.2);
+}
+
+/* PRODUCT 1 COLORS */
+.p1-black { background: black; }
+.p1-pink { background: pink; }
+.p1-yellow { background: yellow; }
+.p1-lightgreen { background: lightgreen; }
+.p1-darkblue { background: #00008B; }
+.p1-lightgray { background: lightgray; }
+.p1-darkpink { background: #d11d72; }
+
+/* PRODUCT 2 COLORS */
+.p2-brown { background: brown; }
+.p2-skyblue { background: skyblue; }
+.p2-darkblue { background: #00008B; }
+.p2-red { background: red; }
+.p2-yellow { background: yellow; }
+.p2-orange { background: orange; }
+.p2-purple { background: purple; }
+.p2-lightpink { background: lightpink; }
+
+.color-options,
+.color-options2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.color-circle,
+.color-circle2 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.color-circle.black { background-color: black; }
+.color-circle.lightpink { background-color: lightpink; }
+.color-circle.yellow { background-color: yellow; }
+.color-circle.lightgreen { background-color: lightgreen; }
+.color-circle.darkblue { background-color: darkblue; }
+.color-circle.lightgrey { background-color: lightgrey; }
+.color-circle.darkpink { background-color: darkpink; }
+
+.color-circle2.brown { background-color: brown; }
+.color-circle2.skyblue { background-color: skyblue; }
+.color-circle2.darkblue { background-color: darkblue; }
+.color-circle2.red { background-color: red; }
+.color-circle2.yellow { background-color: yellow; }
+.color-circle2.orange { background-color: orange; }
+.color-circle2.purple { background-color: purple; }
+.color-circle2.lightpink { background-color: lightpink; }
+
+.color-circle.selected,
+.color-circle2.selected {
+    outline: 3px solid #fff;
+    transform: scale(1.1);
+}
+
+/* Quantity */
+.qty-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.qty-wrapper .qty-input {
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 5px;
+    background-color: #fee303;
+    color: #000;
+}
+
+.qty-wrapper .qty-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.qty-wrapper .qty-btn:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+}
+
+#cart-items {
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.cart-item {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cart-item button {
+  background: #ff9800;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.cart-item button:hover {
+  background: #e68900;
+}
+
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   Currency Dropdown (Red)
+========================= */
+.currency-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.custom-select {
+    position: relative;
+    width: 180px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-select .selected {
+    background: #ff0000; /* red background */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.custom-select .selected .flag {
+    margin-right: 8px;
+}
+
+.custom-select .options {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.custom-select .option {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.custom-select .option:hover {
+    background: #ff0000;
+    color: white;
+    border-radius: 8px;
+}
+
+.custom-select.active .options {
+    display: block;
+}
+   
+
+
+
+
+
+
+/* Contact page background */
+body.contact-page {
+    background: url('images/1e8b4ead6478d8c5e588a6404d6abbc1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Overlay for readability */
+body.contact-page main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent black overlay */
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Form, contact info, social links */
+body.contact-page form,
+body.contact-page .contact-info,
+body.contact-page .social-links {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Inputs and buttons styling */
+body.contact-page form input,
+body.contact-page form textarea {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid #fff;
+    color: white;
+}
+
+body.contact-page form button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+body.contact-page form button:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
+}
+
+/* Optional: text shadows for headings and paragraphs */
+body.contact-page h1,
+body.contact-page h2,
+body.contact-page p {
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body.contact-page main {
+        margin: 20px;
+        padding: 25px;
+    }
+}
+
